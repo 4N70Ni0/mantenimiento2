@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Mantenimiento 2",
+    'name': "Mantenimientopapapa",
 
     'summary': """
         Proyecto para la asignatura de SGES""",
