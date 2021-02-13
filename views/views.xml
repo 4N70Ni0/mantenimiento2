@@ -148,5 +148,29 @@
 				</form>
 			</field>
 		</record>
+		<!-- Menus -->
+		<record model="ir.actions.act_window" id="mantenimiento.equipo_action_window">
+			<field name="name">mantenimiento.equipo.action_window</field>
+			<field name="res_model">mantenimiento.equipo</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="mantenimiento.trabajador_action_window">
+			<field name="name">mantenimiento.trabajador.action_window</field>
+			<field name="res_model">mantenimiento.trabajador</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="mantenimiento.incidencia_action_window">
+			<field name="name">mantenimiento.incidencia.action_window</field>
+			<field name="res_model">mantenimiento.incidencia</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="mantenimiento.tipo_action_window">
+			<field name="name">mantenimiento.tipo.action_window</field>
+			<field name="res_model">mantenimiento.tipo</field>
+			<field name="view_mode">tree,form</field>
+		</record>
 	</data>
 </odoo>
