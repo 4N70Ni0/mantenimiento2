@@ -1,0 +1,7 @@
+<odoo>
+	<data>
+		<record id="mantenimiento_usuario" model="res.groups">
+			<field name="name">Mantenimiento / Responsable</field>
+		</record>
+	</data>
+</odoo>
