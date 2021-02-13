@@ -9,7 +9,7 @@ class mantenimiento_equipo(models.Model):
     nombre = fields.Char(string="Nombre", help="Introduce el nombre del equipo")
 
     # Trabajador N:M Equipo
-    equipo_ids = fields.Many2many("mantenimiento.trabajador", "trabajador_equipo", "trabajador_id", "equipo_id")
+    trabajador_ids = fields.Many2many("mantenimiento.trabajador", "trabajador_equipo", "trabajador_id", "equipo_id")
 
 
 class mantenimiento_incidencia(models.Model):
@@ -36,9 +36,9 @@ class mantenimiento_trabajador(models.Model):
     nombre = fields.Char(string="Nombre", required=True, help="Introduce el nombre del trabajador")
     edad = fields.Integer(string="edad")
     puesto = fields.Char(string="Puesto")
-    fecha_contratacion = fields.Date(string="fecha de contratacion")
-    permisos = fields.Integer(string="permisos")
-    telefono = fields.Char(string="Telefono")
+    Fecha_Contratacion = fields.Date(string="fecha de contratacion")
+    Permisos = fields.Integer(string="permisos")
+    Telefono = fields.Char(string="Telefono")
     #equipo = fieldsMany2many('mantenimiento.equipo', string="Equipo al que pertenece el trabajador")
 
     # Trabajador (1):N Incidencia

@@ -12,20 +12,26 @@
 		</record>
 
 		<record id="mantenimiento_equipo_form" model="ir.ui.view">
-
 			<field name="name">mantenimiento.equipo.form</field>
 			<field name="model">mantenimiento.equipo</field>
 			<field name="arch" type="xml">
 				<form>
 					<group colspan="2" col="1">
 						<field name="nombre"/>
+						<!-- Tabla de trabajadores -->
+						<field name="equipo_ids">
+							<tree>
+								<field name="dni"/>					
+								<field name="nombre"/>
+								<field name="edad"/>
+							</tree>
+						</field>
 					</group>
 				</form>
 			</field>
 		</record>
 
 		<!--Incidencia-->
-		
 		<record model="ir.ui.view" id="mantenimiento_incidencia_tree">
 			<field name="name">mantenimiento.incidencia.tree</field>
 			<field name="model">mantenimiento.incidencia</field>
@@ -43,7 +49,6 @@
 		</record>
 
 		<record id="mantenimiento_incidencia_form" model="ir.ui.view">
-
 			<field name="name">mantenimiento.incidencia.form</field>
 			<field name="model">mantenimiento.incidencia</field>
 			<field name="arch" type="xml">
@@ -52,17 +57,18 @@
 						<field name="destinatario"/>					
 						<field name="descripcion"/>
 						<field name="estado"/>
-						<field name="tipo_de_incidencia"/>
 						<field name="fecha_y_hora_Inicio"/>
 						<field name="fecha_y_hora_Final"/>
 						<field name="prioridad"/>
+						<!-- Campos relacionados -->
+						<field name="trabajador_id"/>
+						<field name="tipo_id"/>
 					</group>
 				</form>
 			</field>
 		</record>
 
 		<!--Trabajador-->
-
 		<record id="mantenimiento_trabajador_tree" model="ir.ui.view">
 			<field name="name">mantenimiento.trabajador.tree</field>
 			<field name="model">mantenimiento.trabajador</field>
@@ -81,28 +87,38 @@
 		</record>
 
 		<record id="mantenimiento_trabajador_form" model="ir.ui.view">
-
 			<field name="name">mantenimiento.trabajador.form</field>
 			<field name="model">mantenimiento.trabajador</field>
 			<field name="arch" type="xml">
 				<form>
 					<group colspan="8" col="4">						
-						
-					<field name="dni"/>					
-					<field name="nombre"/>
-					<field name="edad"/>
-					<field name="puesto"/>
-					<field name="Fecha_Contratacion"/>
-					<field name="Permisos"/>
-					<field name="Telefono"/>
-					<field name="Equipo"/>
+						<field name="dni"/>					
+						<field name="nombre"/>
+						<field name="edad"/>
+						<field name="puesto"/>
+						<field name="Fecha_Contratacion"/>
+						<field name="Permisos"/>
+						<field name="Telefono"/>
+						<!-- Tabla de equipos -->
+						<field name="equipo_ids">
+							<tree>
+								<field name="nombre"/>
+							</tree>
+						</field>
+						<!-- Tabla de incidencias -->
+						<field name="incidencias_ids">
+							<tree>
+								<field name="estado"/>
+								<field name="fecha_y_hora_Inicio"/>
+								<field name="fecha_y_hora_Final"/>
+							</tree>
+						</field>
 					</group>
 				</form>
 			</field>
 		</record>
 
 		<!-- Tipo de incidencia-->
-
 		<record id="mantenimiento_tipo_tree" model="ir.ui.view">
 			<field name="name">mantenimiento.tipo.tree</field>
 			<field name="model">mantenimiento.tipo</field>
@@ -114,14 +130,20 @@
 		</record>
 
 		<record id="mantenimiento_tipo_form" model="ir.ui.view">
-
 			<field name="name">mantenimiento.tipo.form</field>
 			<field name="model">mantenimiento.tipo</field>
 			<field name="arch" type="xml">
 				<form>
 					<group colspan="8" col="4">						
-						
 						<field name="nombre"/>
+						<!-- Tabla de incidencias -->
+						<field name="incidencias_ids">
+							<tree>
+								<field name="estado"/>
+								<field name="fecha_y_hora_Inicio"/>
+								<field name="fecha_y_hora_Final"/>
+							</tree>
+						</field>
 					</group>
 				</form>
 			</field>
