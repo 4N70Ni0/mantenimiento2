@@ -19,7 +19,7 @@
 					<group colspan="2" col="1">
 						<field name="nombre"/>
 						<!-- Tabla de trabajadores -->
-						<field name="equipo_ids">
+						<field name="trabajador_ids">
 							<tree>
 								<field name="dni"/>					
 								<field name="nombre"/>
@@ -37,10 +37,10 @@
 			<field name="model">mantenimiento.incidencia</field>
 			<field name="arch" type="xml">
 				<tree>
-					<field name="destinatario"/>					
+						<!--<field name="destinatario"/>-->
 					<field name="descripcion"/>
 					<field name="estado"/>
-					<field name="tipo_de_incidencia"/>
+						<!--<field name="tipo_de_incidencia"/>-->
 					<field name="fecha_y_hora_Inicio"/>
 					<field name="fecha_y_hora_Final"/>
 					<field name="prioridad"/>
@@ -54,7 +54,7 @@
 			<field name="arch" type="xml">
 				<form>
 					<group colspan="7" col="7">						
-						<field name="destinatario"/>					
+							<!--<field name="destinatario"/>-->
 						<field name="descripcion"/>
 						<field name="estado"/>
 						<field name="fecha_y_hora_Inicio"/>
@@ -81,7 +81,7 @@
 					<field name="Fecha_Contratacion"/>
 					<field name="Permisos"/>
 					<field name="Telefono"/>
-					<field name="Equipo"/>
+						<!--<field name="Equipo"/>-->
 				</tree>
 			</field>
 		</record>
