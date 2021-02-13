@@ -27,6 +27,18 @@ class mantenimiento_incidencia(models.Model):
     trabajador_id = fields.Many2one("mantenimiento.trabajador", string="Trabajador", required=True)
     # Tipo de incidencia 1:(N) Incidencia
     tipo_id = fields.Many2one("mantenimiento.tipo", string="Tipo de incidencia", required=True)
+
+    # Campo calculado
+    duracion_incidencia = fields.Integer(string="Duración de la incidencia (días)", compute="_duracion", store=True)
+
+    @api.depends("fecha_y_hora_Inicio", "fecha_y_hora_Final")
+    def _duracion(self):
+        for r in self:
+            # Convertir las fechas de Odoo a fechas de Python
+            inicio = datetime.strptime(r.fecha_y_hora_Inicio, tools.DEFAULT_SERVER_DATE_FORMAT)
+            final = datetime.strptime(r.fecha_y_hora_Final, tools.DEFAULT_SERVER_DATE_FORMAT)
+            # Calcular la diferencia de tiempo
+            r.duracion_incidencia = final.days - inicio.days
     
 
 class mantenimiento_trabajador(models.Model):
