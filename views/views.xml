@@ -1,7 +1,8 @@
 <odoo>
 	<data>
-		<!--Equipo-->
-		<record model="ir.ui.view" id='mantenimiento_equipo_tree'>
+		<!-- EQUIPO -->
+		<!-- Mostrar registros -->
+		<record model="ir.ui.view" id="mantenimiento_equipo_tree">
 			<field name="name">mantenimiento.equipo.tree</field>
 			<field name="model">mantenimiento.equipo</field>
 			<field name="arch" type="xml">
@@ -10,15 +11,14 @@
 				</tree>
 			</field>
 		</record>
-
+		<!-- Introducir registros -->
 		<record id="mantenimiento_equipo_form" model="ir.ui.view">
 			<field name="name">mantenimiento.equipo.form</field>
 			<field name="model">mantenimiento.equipo</field>
 			<field name="arch" type="xml">
 				<form>
-					<group colspan="2" col="1">
+					<group colspan="2" col="2">
 						<field name="nombre"/>
-						<!-- Tabla de trabajadores -->
 						<field name="trabajador_ids">
 							<tree>
 								<field name="dni"/>					
@@ -30,45 +30,46 @@
 				</form>
 			</field>
 		</record>
+		<!-- FIN EQUIPO -->
 
-		<!--Incidencia-->
+		<!-- INCIDENCIA -->
+		<!-- Mostrar registros -->
 		<record model="ir.ui.view" id="mantenimiento_incidencia_tree">
 			<field name="name">mantenimiento.incidencia.tree</field>
 			<field name="model">mantenimiento.incidencia</field>
 			<field name="arch" type="xml">
 				<tree>
-						<!--<field name="destinatario"/>-->
 					<field name="descripcion"/>
 					<field name="estado"/>
-						<!--<field name="tipo_de_incidencia"/>-->
 					<field name="fecha_y_hora_Inicio"/>
 					<field name="fecha_y_hora_Final"/>
 					<field name="prioridad"/>
 				</tree>
 			</field>
 		</record>
-
+		<!-- Introducir registros -->
 		<record id="mantenimiento_incidencia_form" model="ir.ui.view">
 			<field name="name">mantenimiento.incidencia.form</field>
 			<field name="model">mantenimiento.incidencia</field>
 			<field name="arch" type="xml">
 				<form>
-					<group colspan="7" col="7">						
-							<!--<field name="destinatario"/>-->
+					<group colspan="2" col="2">						
 						<field name="descripcion"/>
 						<field name="estado"/>
 						<field name="fecha_y_hora_Inicio"/>
 						<field name="fecha_y_hora_Final"/>
 						<field name="prioridad"/>
-						<!-- Campos relacionados -->
+
 						<field name="trabajador_id"/>
 						<field name="tipo_id"/>
 					</group>
 				</form>
 			</field>
 		</record>
+		<!-- FIN INCIDENCIA -->
 
-		<!--Trabajador-->
+		<!-- TRABAJADOR -->
+		<!-- Mostrar registros -->
 		<record id="mantenimiento_trabajador_tree" model="ir.ui.view">
 			<field name="name">mantenimiento.trabajador.tree</field>
 			<field name="model">mantenimiento.trabajador</field>
@@ -81,17 +82,16 @@
 					<field name="Fecha_Contratacion"/>
 					<field name="Permisos"/>
 					<field name="Telefono"/>
-						<!--<field name="Equipo"/>-->
 				</tree>
 			</field>
 		</record>
-
+		<!-- Introducir registros -->
 		<record id="mantenimiento_trabajador_form" model="ir.ui.view">
 			<field name="name">mantenimiento.trabajador.form</field>
 			<field name="model">mantenimiento.trabajador</field>
 			<field name="arch" type="xml">
 				<form>
-					<group colspan="8" col="4">						
+					<group colspan="2" col="2">						
 						<field name="dni"/>					
 						<field name="nombre"/>
 						<field name="edad"/>
@@ -99,13 +99,13 @@
 						<field name="Fecha_Contratacion"/>
 						<field name="Permisos"/>
 						<field name="Telefono"/>
-						<!-- Tabla de equipos -->
+
 						<field name="equipo_ids">
 							<tree>
 								<field name="nombre"/>
 							</tree>
 						</field>
-						<!-- Tabla de incidencias -->
+
 						<field name="incidencias_ids">
 							<tree>
 								<field name="estado"/>
@@ -117,8 +117,10 @@
 				</form>
 			</field>
 		</record>
+		<!-- FIN TRABAJADOR -->
 
-		<!-- Tipo de incidencia-->
+		<!-- TIPO DE INCIDENCIA -->
+		<!-- Mostrar registros -->
 		<record id="mantenimiento_tipo_tree" model="ir.ui.view">
 			<field name="name">mantenimiento.tipo.tree</field>
 			<field name="model">mantenimiento.tipo</field>
@@ -128,15 +130,15 @@
 				</tree>
 			</field>
 		</record>
-
+		<!-- Introducir registros -->
 		<record id="mantenimiento_tipo_form" model="ir.ui.view">
 			<field name="name">mantenimiento.tipo.form</field>
 			<field name="model">mantenimiento.tipo</field>
 			<field name="arch" type="xml">
 				<form>
-					<group colspan="8" col="4">						
+					<group colspan="2" col="2">						
 						<field name="nombre"/>
-						<!-- Tabla de incidencias -->
+
 						<field name="incidencias_ids">
 							<tree>
 								<field name="estado"/>
@@ -148,29 +150,41 @@
 				</form>
 			</field>
 		</record>
-		<!-- Menus -->
-		<record model="ir.actions.act_window" id="mantenimiento.equipo_action_window">
+		<!-- FIN TIPO DE INCIDENCIA -->
+
+		<!-- ACCIONES -->
+		<!-- Acciones Equipo -->
+		<record model="ir.actions.act_window" id="mantenimiento_equipo_action_window">
 			<field name="name">mantenimiento.equipo.action_window</field>
 			<field name="res_model">mantenimiento.equipo</field>
 			<field name="view_mode">tree,form</field>
 		</record>
-
-		<record model="ir.actions.act_window" id="mantenimiento.trabajador_action_window">
+		<!-- Acciones Trabajador -->
+		<record model="ir.actions.act_window" id="mantenimiento_trabajador_action_window">
 			<field name="name">mantenimiento.trabajador.action_window</field>
 			<field name="res_model">mantenimiento.trabajador</field>
 			<field name="view_mode">tree,form</field>
 		</record>
-
-		<record model="ir.actions.act_window" id="mantenimiento.incidencia_action_window">
+		<!-- Acciones Incidencia -->
+		<record model="ir.actions.act_window" id="mantenimiento_incidencia_action_window">
 			<field name="name">mantenimiento.incidencia.action_window</field>
 			<field name="res_model">mantenimiento.incidencia</field>
 			<field name="view_mode">tree,form</field>
 		</record>
-
-		<record model="ir.actions.act_window" id="mantenimiento.tipo_action_window">
+		<!-- Acciones Tipo de incidencia -->
+		<record model="ir.actions.act_window" id="mantenimiento_tipo_action_window">
 			<field name="name">mantenimiento.tipo.action_window</field>
 			<field name="res_model">mantenimiento.tipo</field>
 			<field name="view_mode">tree,form</field>
 		</record>
+		<!-- FIN ACCIONES -->
+
+		<!-- MENÚS -->
+		<menuitem name="Mantenimiento2" id="mantenimiento_menu_root"/>
+		<menuitem name="Equipo" id="mantenimiento_menu_equipo" parent="mantenimiento_menu_root" action="mantenimiento_equipo_action_window" />
+		<menuitem name="Trabajador" id="mantenimiento_menu_trabajador" parent="mantenimiento_menu_root" action="mantenimiento_trabajador_action_window" />
+		<menuitem name="Incidencia" id="mantenimiento_menu_incidencia" parent="mantenimiento_menu_root" action="mantenimiento_incidencia_action_window" />
+		<menuitem name="Tipo de tipo" id="mantenimiento_menu_tipo" parent="mantenimiento_menu_root" action="mantenimiento_tipo_action_window" />
+		<!-- FIN MENÚS -->
 	</data>
 </odoo>

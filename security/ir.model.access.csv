@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-mantenimiento_usuario,mantenimiento-usuario,model_mantenimiento_trabajador,mantenimiento_usuario,1,1,1,1
+access_mantenimiento_equipo,mantenimiento.equipo,model_mantenimiento_equipo,,1,1,1,1
+access_mantenimiento_trabajador,mantenimiento.trabajador,model_mantenimiento_trabajador,,1,1,1,1
+access_mantenimiento_incidencia,mantenimiento.incidencia,model_mantenimiento_incidencia,,1,1,1,1
+access_mantenimiento_tipo,mantenimiento.tipo,model_mantenimiento_tipo,,1,1,1,1
