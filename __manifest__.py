@@ -9,7 +9,7 @@
        Modulo creado por Antonio Bañon y Sergio Orellana para la asignatura SGES sobre mantenimiento de equipamiento 
     """,
 
-    'author': "My Company",
+    'author': "Dos personas",
     'website': "http://www.yourcomny.com",
 
     # Categories can be used to filter modules in modules listing
@@ -23,7 +23,7 @@
 
     # always loaded
     'data': [
-        #'security/security.xml',
+        'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
     ],
@@ -32,6 +32,6 @@
         'demo/demo.xml',
     ],
     
-    'application': True,
-    'installable': True,
+    #'application': True,
+    #'installable': True,
 }
