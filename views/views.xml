@@ -41,9 +41,10 @@
 				<tree>
 					<field name="descripcion"/>
 					<field name="estado"/>
+					<field name="prioridad"/>
 					<field name="fecha_y_hora_Inicio"/>
 					<field name="fecha_y_hora_Final"/>
-					<field name="prioridad"/>
+					<field name="duracion_incidencia"/>
 				</tree>
 			</field>
 		</record>
