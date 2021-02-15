@@ -156,25 +156,26 @@
 		<!-- ACCIONES -->
 		<!-- Acciones Equipo -->
 		<record model="ir.actions.act_window" id="mantenimiento_equipo_action_window">
-			<field name="name">mantenimiento.equipo.action_window</field>
+				<!--<field name="name">mantenimiento.equipo.action_window</field>-->
+			<field name="name">Equipo</field>
 			<field name="res_model">mantenimiento.equipo</field>
 			<field name="view_mode">tree,form</field>
 		</record>
 		<!-- Acciones Trabajador -->
 		<record model="ir.actions.act_window" id="mantenimiento_trabajador_action_window">
-			<field name="name">mantenimiento.trabajador.action_window</field>
+			<field name="name">Trabajador</field>
 			<field name="res_model">mantenimiento.trabajador</field>
 			<field name="view_mode">tree,form</field>
 		</record>
 		<!-- Acciones Incidencia -->
 		<record model="ir.actions.act_window" id="mantenimiento_incidencia_action_window">
-			<field name="name">mantenimiento.incidencia.action_window</field>
+			<field name="name">Incidencia</field>
 			<field name="res_model">mantenimiento.incidencia</field>
 			<field name="view_mode">tree,form</field>
 		</record>
 		<!-- Acciones Tipo de incidencia -->
 		<record model="ir.actions.act_window" id="mantenimiento_tipo_action_window">
-			<field name="name">mantenimiento.tipo.action_window</field>
+			<field name="name">Tipo de incidencia</field>
 			<field name="res_model">mantenimiento.tipo</field>
 			<field name="view_mode">tree,form</field>
 		</record>

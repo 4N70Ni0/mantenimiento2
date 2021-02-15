@@ -39,7 +39,7 @@ class mantenimiento_incidencia(models.Model):
     prioridad = fields.Selection([('0', 'Baja'),('1', 'Moderada'),('2', 'Alta'),('3', 'Peligrosa')])
     descripcion = fields.Char(string="Descripcion", help="Introduce una descripción")
     # Procesando es el valor por defecto, en cuanto el jefe de equipo acepte la incidencia, pasará a 'En proceso'.
-    estado = fields.Selection([('0', 'Procesando...'),('1', 'En proceso'),('2', 'Completado'),('3', 'Cancelado')], default=0)
+    estado = fields.Selection([('0', 'Procesando...'),('1', 'En proceso'),('2', 'Completado'),('3', 'Cancelado')], default='0')
 
     # Trabajador 1:(N) Incidencia
     trabajador_id = fields.Many2one("mantenimiento.trabajador", string="Trabajador")
