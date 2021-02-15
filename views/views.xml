@@ -184,7 +184,7 @@
 		<menuitem name="Equipo" id="mantenimiento_menu_equipo" parent="mantenimiento_menu_root" action="mantenimiento_equipo_action_window" />
 		<menuitem name="Trabajador" id="mantenimiento_menu_trabajador" parent="mantenimiento_menu_root" action="mantenimiento_trabajador_action_window" />
 		<menuitem name="Incidencia" id="mantenimiento_menu_incidencia" parent="mantenimiento_menu_root" action="mantenimiento_incidencia_action_window" />
-		<menuitem name="Tipo de tipo" id="mantenimiento_menu_tipo" parent="mantenimiento_menu_root" action="mantenimiento_tipo_action_window" />
+		<menuitem name="Tipo de incidencia" id="mantenimiento_menu_tipo" parent="mantenimiento_menu_root" action="mantenimiento_tipo_action_window" />
 		<!-- FIN MENÚS -->
 	</data>
 </odoo>
