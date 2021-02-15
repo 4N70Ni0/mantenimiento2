@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from datetime import datetime
 
 
 class mantenimiento_equipo(models.Model):
@@ -36,7 +37,7 @@ class mantenimiento_incidencia(models.Model):
     fecha_y_hora_Final = fields.Date(string="Fecha y hora que se marcó el final de la incidencia")
     prioridad = fields.Selection([('0', 'Baja'),('1', 'Moderada'),('2', 'Alta'),('3', 'Peligrosa')])
     descripcion = fields.Char(string="Descripcion", help="Introduce una descripción")
-    estado = fields.Selection([('0', 'Procesando...'),('1', 'En proceso'),('2', 'Completado'),('3', 'Cancelado')])
+    estado = fields.Selection([('0', 'Procesando...'),('1', 'En proceso'),('2', 'Completado'),('3', 'Cancelado')], default='0')#Procesando es el valor por defecto, en cuanto el jefe de equipo acepte la incidencia pasará a en proceso.
 
     # Trabajador 1:(N) Incidencia
     trabajador_id = fields.Many2one("mantenimiento.trabajador", string="Trabajador")
@@ -51,7 +52,7 @@ class mantenimiento_incidencia(models.Model):
         for r in self:
             # Convertir las fechas de Odoo a fechas de Python
             inicio = datetime.strptime(r.fecha_y_hora_Inicio, tools.DEFAULT_SERVER_DATE_FORMAT)
-            final = datetime.strptime(r.fecha_y_hora_Final, tools.DEFAULT_SERVER_DATE_FORMAT)
+            final =datetime.strptime(r.fecha_y_hora_Final, tools.DEFAULT_SERVER_DATE_FORMAT)
             # Calcular la diferencia de tiempo
             r.duracion_incidencia = final.days - inicio.days
 
