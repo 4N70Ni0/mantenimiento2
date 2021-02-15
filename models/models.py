@@ -20,7 +20,7 @@ class mantenimiento_trabajador(models.Model):
     edad = fields.Integer(string="Edad")
     puesto = fields.Char(string="Puesto")
     Fecha_Contratacion = fields.Date(string="Fecha de contratacion")
-    Permisos = fields.Integer(string="Permisos")
+    Permisos = fields.Selection([('0', 'Ninguno'),('1', 'Trabajador Equipo'),('2', 'Jefe de Equipo'),('3', 'Jefe de equipos')])
     Telefono = fields.Char(string="Telefono")
 
     # Trabajador (1):N Incidencia
@@ -34,9 +34,9 @@ class mantenimiento_incidencia(models.Model):
 
     fecha_y_hora_Inicio = fields.Date(string="Fecha y hora de la incidencia")
     fecha_y_hora_Final = fields.Date(string="Fecha y hora que se marcó el final de la incidencia")
-    prioridad = fields.Integer(string="Prioridad", help="Introduce la prioridad de la incidencia")
+    prioridad = fields.Selection([('0', 'Baja'),('1', 'Moderada'),('2', 'Alta'),('3', 'Peligrosa')])
     descripcion = fields.Char(string="Descripcion", help="Introduce una descripción")
-    estado = fields.Integer(string="Estado")
+    estado = fields.Selection([('0', 'Procesando...'),('1', 'En proceso'),('2', 'Completado'),('3', 'Cancelado')])
 
     # Trabajador 1:(N) Incidencia
     trabajador_id = fields.Many2one("mantenimiento.trabajador", string="Trabajador")
