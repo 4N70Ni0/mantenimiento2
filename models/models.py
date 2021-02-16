@@ -50,7 +50,7 @@ class mantenimiento_incidencia(models.Model):
     estado = fields.Selection([('0', 'Procesando...'),('1', 'En proceso'),('2', 'Completado'),('3', 'Cancelado')], default='0', 
             help="Estado en el que se encuentra la incidencia", required=True)
     fecha_Inicio = fields.Date(string="Inicio de la incidencia", 
-            help="Fecha de inicio de la incidencia", required=True)
+            help="Fecha de inicio de la incidencia", required=True, default=fields.Date.today())
     fecha_Final = fields.Date(string="Solventación de la incidencia", 
             help="Fecha de finalización de la incidencia")
     prioridad = fields.Selection([('0', 'Baja'),('1', 'Moderada'),('2', 'Alta'), ('3', 'Muy alta')], 
