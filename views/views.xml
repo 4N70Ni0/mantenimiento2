@@ -109,6 +109,7 @@
 
 						<field name="incidencias_ids">
 							<tree>
+								<field name="descripcion"/>
 								<field name="estado"/>
 								<field name="fecha_Inicio"/>
 								<field name="fecha_Final"/>
