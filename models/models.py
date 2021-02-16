@@ -45,9 +45,9 @@ class mantenimiento_trabajador(models.Model):
 class mantenimiento_incidencia(models.Model):
     _name= 'mantenimiento.incidencia'
 
-    fecha_Inicio = fields.Date(string="Fecha de la incidencia", 
+    fecha_Inicio = fields.Date(string="Inicio de la incidencia", 
             help="Fecha de inicio de la incidencia")
-    fecha_Final = fields.Date(string="Fecha que se marcó el final de la incidencia", 
+    fecha_Final = fields.Date(string="Solventación de la incidencia", 
             help="Fecha de finalización de la incidencia")
     prioridad = fields.Selection([('0', 'Baja'),('1', 'Moderada'),('2', 'Alta'),('3', 'Peligrosa')], 
             help="Prioridad de la incidencia")
@@ -72,8 +72,10 @@ class mantenimiento_incidencia(models.Model):
     def _duracion(self):
         for r in self:
             # Calcular la diferencia de tiempo
-            r.duracion_incidencia = (r.fecha_Final - r.fecha_Inicio).days
-
+            try:
+                r.duracion_incidencia = (r.fecha_Final - r.fecha_Inicio).days
+            except TypeError as ex:
+                r.duracion_incidencia = 0
 
 class mantenimiento_tipo(models.Model):
     _name='mantenimiento.tipo'
