@@ -42,8 +42,8 @@
 					<field name="descripcion"/>
 					<field name="estado"/>
 					<field name="prioridad"/>
-					<field name="fecha_y_hora_Inicio"/>
-					<field name="fecha_y_hora_Final"/>
+					<field name="fecha_Inicio"/>
+					<field name="fecha_Final"/>
 					<field name="duracion_incidencia"/>
 				</tree>
 			</field>
@@ -57,8 +57,8 @@
 					<group colspan="2" col="2">						
 						<field name="descripcion"/>
 						<field name="estado"/>
-						<field name="fecha_y_hora_Inicio"/>
-						<field name="fecha_y_hora_Final"/>
+						<field name="fecha_Inicio"/>
+						<field name="fecha_Final"/>
 						<field name="prioridad"/>
 
 						<field name="trabajador_id"/>
@@ -110,8 +110,8 @@
 						<field name="incidencias_ids">
 							<tree>
 								<field name="estado"/>
-								<field name="fecha_y_hora_Inicio"/>
-								<field name="fecha_y_hora_Final"/>
+								<field name="fecha_Inicio"/>
+								<field name="fecha_Final"/>
 							</tree>
 						</field>
 					</group>
@@ -143,8 +143,8 @@
 						<field name="incidencias_ids">
 							<tree>
 								<field name="estado"/>
-								<field name="fecha_y_hora_Inicio"/>
-								<field name="fecha_y_hora_Final"/>
+								<field name="fecha_Inicio"/>
+								<field name="fecha_Final"/>
 							</tree>
 						</field>
 					</group>
